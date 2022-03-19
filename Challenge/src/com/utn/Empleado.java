@@ -48,4 +48,10 @@ public class Empleado extends Persona{
     public void setMunicipio(Municipalidad municipio) {
         this.municipio = municipio;
     }
+
+    @Override
+    public String toString() {
+        String formato = "\nSALARIO: $%.2f \nANTIGUEDAD: %d años. \nCARGO: %s \nMUNICIPIO: %s";
+        return super.toString() + String.format(formato,getSalario(),getAntiguedad(),getPuestoDeTrabajo(), getMunicipio());
+    }
 }

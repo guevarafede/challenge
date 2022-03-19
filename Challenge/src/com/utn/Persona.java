@@ -50,4 +50,10 @@ public class Persona {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        String formato = "\nNOMBRE Y APELLIDO: %s %s \nTELEFONO: %d \nEMAIL: %s";
+        return String.format(formato,getNombre(), getApellido(), getTelefono(), getEmail());
+    }
 }

@@ -1,21 +1,21 @@
 package com.utn;
 
 import java.security.spec.RSAOtherPrimeInfo;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-
+        /** NOTA: Ir descomentando el llamado a cada ejercicio para su reproduccion*/
         //ejercicio1();
         //ejercicio2();
         //ejercicio3();
         //ejercicio4();
         //ejercicio5();
         //ejercicioPOO();
-
-
-
+        ejercicioBDD(); //Ejercicio sin terminar. Falta implementar lo que respecta a Base de Datos.
     }
 
     /** EJERCICIO 1: Pide un número por teclado e indica si es un número primo o no. */
@@ -178,9 +178,20 @@ public class Main {
     }
 
     /** EJERCICIO BASE DE DATOS: No lo pude resolver en codigo. Es la materia que me falta para recibirme y la estoy
-        preparando.Pude realizar el modelo entidad-relacion y pasarlo a tablas pero no lo pude volcar al codigo aun.
+        preparando. Pude realizar el modelo entidad-relacion y pasarlo a tablas pero no lo pude volcar al codigo aun.
         Hice el modelo de clases, generando una clase padre PERSONA, luego una clase EMPLEADO que hereda atributos de
         persona y cree una clase ENUM llamada MUNICIPALIDAD donde apareceria toda la lista de municipios existentes (solo
         puse algunos para el caso) */
+    public static void ejercicioBDD() {
+        List<Empleado> empleados = new ArrayList<>(); //Hago una lista y agrego 2 empleados resolver la consigna sin BDD.
+        empleados.add(new Empleado("Federico", "Guevara", 156875095, "guevara_fede@hotmail.com", 75000, 12, "Programacion", Municipalidad.GENERAL_PUEYRREDON));
+        empleados.add(new Empleado("Roberto", "Lopez", 155441297, "rlopez@gmail.com", 70000, 11, "Gerente", Municipalidad.AZUL));
+        for (Empleado empleado : empleados) {
+            if ((empleado.getAntiguedad()>=10 && empleado.getAntiguedad()<=15) && (empleado.getSalario()>70000)){
+                System.out.println(empleado);
+            }
+        }
+    }
+
 
 }
